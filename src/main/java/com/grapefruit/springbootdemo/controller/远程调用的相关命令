@@ -1,0 +1,20 @@
+
+
+
+
+
+远程调用 其中address为端口号
+java -jar -Xdebug -Xrunjdwp:transport=dt_socket,server=y,suspend=n,address=8080 springbootdemo-1.0.jar
+java -Xdebug -Xrunjdwp:transport=dt_socket,suspend=n,server=y,address=8080 -jar springbootdemo-1.0.jar
+
+Identify and stop the process that's listening on port 8080 or
+configure this application to listen on another portss
+
+1 服务器启动jar包 （监听端口5005）
+　　java -Xdebug -Xrunjdwp:transport=dt_socket,address=5005,server=y,suspend=y -jar springbootdemo-1.0.jar
+
+2配置idea
+　　-agentlib:jdwp=transport=dt_socket,server=y,suspend=n,address=5005
+
+1.查看端口被哪个程序占用
+  sudo lsof -i tcp:port

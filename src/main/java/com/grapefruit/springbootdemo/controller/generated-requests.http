@@ -1,0 +1,16 @@
+
+###
+远程调用 其中addressJVM与idea 连接监听的端口号
+
+使用jar包方式时的启动命令
+java -jar -Xdebug -Xrunjdwp:transport=dt_socket,server=y,suspend=n,address=8888 springbootdemo-1.0.jar
+
+mac下测试远程端口
+nc -vz -w 2 47.115.42.52 8080
+
+###
+GET http://47.115.42.52:8080
+
+
+###
+GET http://localhost:8080
